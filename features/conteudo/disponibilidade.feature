@@ -6,35 +6,34 @@ Feature: Conteúdo
   
   Scenario: Nenhum dado disponível sobre a pesquisa
     Given Estou na página "Pesquisar"
-    And Pesquiso por um título de filme
-    Then O sistema procura pelo título na base de dados
+    And Pesquiso por "asfdssfg"
+    Then O sistema procura por "asfdssfg" na base de dados
     And Não encontra nenhuma informação sobre a pesquisa do usuário
-    Then O programa informa ao usuário que não há nenhum dado disponível sobre o título pesquisado
+    Then O programa informa ao usuário que não há nenhum dado disponível sobre "asfdssfg"
 
   Scenario: Filme pesquisado não disponível na região
     Given Estou na página "Pesquisar"
-    And Pesquiso por um título de filme
-    Then O sistema procura pelo título na base de dados
+    And Pesquiso por "Popstar Never Stop Never Stopping"
+    Then O sistema procura por "Popstar Never Stop Never Stopping" na base de dados
     And Encontra dados sobre o filme
-    And Nesses dados diz que o filme em questão não está disponível para a região
-    Then O programa informa ao usuário que o filme não está disponível para a região
+    And Nesses dados diz que o filme não está disponível para a região
+    Then O programa informa ao usuário que "Popstar Never Stop Never Stopping" não está disponível para a região
 
   Scenario: Filme pesquisado em cartaz nos cinemas
     Given Estou na página "Pesquisar"
-    And Pesquiso por um título de filme
-    Then O sistema procura pelo título na base de dados
+    And Pesquiso por "Indiana Jones Relíquia do Destino"
+    Then O sistema procura por "Indiana Jones Relíquia do Destino" na base de dados
     And Encontra dados sobre o filme
     And Nos dados mostra que o filme está disponível nos cinemas
-    Then O programa informa ao usuário que o filme está disponível nos cinemas
+    Then O programa informa ao usuário que "Indiana Jones Relíquia do Destino" está disponível nos cinemas
 
   Scenario: Filme pesquisado disponível em algum streaming
     Given Estou na página "Pesquisar"
-    And Pesquiso por um título de filme
-    Then O sistema procura pelo título na base de dados
+    And Pesquiso por "Django Livre"
+    Then O sistema procura por "Django Livre" na base de dados
     And Encontra dados sobre o filme
-    And Nos dados mostra que o filme está disponível em algum streaming
-    Then O programa busca em qual(is) streaming(s) o filme pode ser assistido
-    Then O programa informa ao usuário por onde ele pode assistir
+    And Nos dados mostra que "Django Livre" está disponível na "Netflix"
+    Then O programa informa ao usuário que ele pode assistir "Django Livre" na "Netflix"
     
 
 
