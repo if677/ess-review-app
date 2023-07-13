@@ -13,11 +13,11 @@ Feature: Conteúdo
 
   Scenario: Filme pesquisado não disponível na região
     Given Estou na página "Pesquisar"
-    When Pesquiso por "Popstar Never Stop Never Stopping"
-    Then O sistema procura por "Popstar Never Stop Never Stopping" na base de dados
+    When Pesquiso por "The Wall"
+    Then O sistema procura por "The Wall" na base de dados
     And Encontra dados sobre o filme
     And Nesses dados diz que o filme não está disponível para a região
-    Then O programa informa ao usuário que "Popstar Never Stop Never Stopping" não está disponível para a região
+    Then O programa informa ao usuário que "The Wall" não está disponível para a região
 
   Scenario: Filme pesquisado em cartaz nos cinemas
     Given Estou na página "Pesquisar"
